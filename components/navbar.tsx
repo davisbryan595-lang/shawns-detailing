@@ -74,10 +74,15 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Button asChild size="lg" className="rounded-full">
+            <Button
+              asChild
+              size="lg"
+              className="rounded-full px-4 md:px-6 text-sm md:text-base shadow-md hover:shadow-lg transition-all duration-300"
+            >
               <a href="tel:6317904554">
-                <Phone className="mr-2 h-4 w-4" />
-                631-790-4554
+                <Phone className="mr-2 h-4 w-4 md:h-5 md:w-5" />
+                <span className="hidden sm:inline">Call Now</span>
+                <span className="sm:hidden">Call</span>
               </a>
             </Button>
           </div>
@@ -113,10 +118,14 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Button asChild size="lg" className="rounded-full w-full">
+              <Button
+                asChild
+                size="lg"
+                className="rounded-full w-full px-4 py-6 text-base shadow-md hover:shadow-lg transition-all duration-300"
+              >
                 <a href="tel:6317904554">
-                  <Phone className="mr-2 h-4 w-4" />
-                  631-790-4554
+                  <Phone className="mr-2 h-5 w-5" />
+                  Tap to Call
                 </a>
               </Button>
             </div>
