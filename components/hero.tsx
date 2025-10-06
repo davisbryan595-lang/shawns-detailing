@@ -6,15 +6,16 @@ import { ArrowRight, MapPin } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-muted/30 to-background">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background/90 via-muted/20 to-background/90">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
           src="/luxury-car-with-water-droplets-and-shine-after-pro.jpg"
           alt="Professional car detailing"
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+        {/* Make overlay lighter so the image pops more */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/60" />
       </div>
 
       {/* Content */}
