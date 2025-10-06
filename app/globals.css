@@ -6,7 +6,7 @@
 :root {
   /* --- Base theme using Shawn's Detailing logo palette --- */
   --background: #d7ae92; /* warm beige background */
-  --foreground: #1a1a1a; /* neutral dark text for contrast */
+  --foreground: #111111; /* slightly softer dark text for contrast */
 
   --card: #f4f0ec;
   --card-foreground: #1a1a1a;
@@ -106,18 +106,18 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-/* --- Base layer with new background gradient --- */
+/* --- Base layer with readability-focused gradient --- */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
 
   body {
-    /* subtle warm-to-cool gradient for depth */
+    /* balanced gradient with improved legibility */
     background: linear-gradient(
       180deg,
       var(--color-brand-tan) 0%,
-      var(--color-brand-sky) 100%
+      var(--color-brand-steel) 100%
     );
     color: var(--foreground);
     font-feature-settings: "rlig" 1, "calt" 1;
@@ -130,7 +130,31 @@
   h4,
   h5,
   h6 {
-    @apply font-serif text-brand-navy;
+    @apply font-serif text-[var(--color-brand-navy)];
+  }
+
+  p {
+    color: var(--foreground);
+    line-height: 1.7;
+  }
+
+  a {
+    color: var(--color-brand-navy);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--color-brand-sky);
+  }
+
+  /* Add gentle background panels to improve contrast */
+  section,
+  .card,
+  .container {
+    background-color: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(6px);
+    border-radius: var(--radius-md);
   }
 }
 
