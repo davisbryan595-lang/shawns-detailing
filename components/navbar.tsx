@@ -20,6 +20,7 @@ export function Navbar() {
   }, [])
 
   const navLinks = [
+    { href: "#home", label: "Home" },
     { href: "#services", label: "Services" },
     { href: "#gallery", label: "Gallery" },
     { href: "#pricing", label: "Pricing" },
@@ -31,15 +32,35 @@ export function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
+      transition={{ type: "spring", stiffness: 80 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-transparent"
-      }`}
+      } animate-float`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="relative h-16 w-48">
-            <Image src="/logo.png" alt="Shawn's Detailing" fill className="object-contain" priority />
+          <Link
+            href="/"
+            className="relative h-16 w-48 group transition-transform duration-500 hover:scale-105"
+          >
+            <motion.div
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.98 }}
+              className="relative h-full w-full"
+            >
+              <Image
+                src="/logo.png"
+                alt="Shawn's Detailing"
+                fill
+                className="object-contain drop-shadow-xl transition-all duration-500"
+                priority
+              />
+              {/* Glossy Overlay */}
+              <div className="absolute inset-0 rounded-xl pointer-events-none overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/40 to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-700 mix-blend-overlay" />
+              </div>
+            </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -79,7 +100,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t"
+            className="md:hidden bg-white/95 border-t backdrop-blur-md shadow-lg"
           >
             <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
