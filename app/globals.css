@@ -4,54 +4,67 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  /* --- Base theme using Shawn's Detailing logo palette --- */
+  --background: #d7ae92; /* warm beige background */
+  --foreground: #1a1a1a; /* neutral dark text for contrast */
+
+  --card: #f4f0ec;
+  --card-foreground: #1a1a1a;
+
+  --popover: #f4f0ec;
+  --popover-foreground: #1a1a1a;
+
+  --primary: #434e9e; /* deep royal blue for CTAs */
+  --primary-foreground: #f5f6fb; /* off-white text on dark */
+
+  --secondary: #839be3; /* light sky blue for highlights */
+  --secondary-foreground: #1a1a1a;
+
+  --muted: #748baa; /* desaturated cool tone for muted elements */
+  --muted-foreground: #e8e8e8;
+
+  --accent: #839be3; /* accent elements and hover tones */
+  --accent-foreground: #ffffff;
+
+  --destructive: #b91c1c;
+  --destructive-foreground: #fef2f2;
+
+  --border: #a6b1c2;
+  --input: #a6b1c2;
+  --ring: #434e9e;
+
+  /* Chart placeholders (kept neutral) */
+  --chart-1: #839be3;
+  --chart-2: #748baa;
+  --chart-3: #434e9e;
+  --chart-4: #d7ae92;
+  --chart-5: #f4f0ec;
+
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Sidebar styling */
+  --sidebar: #434e9e;
+  --sidebar-foreground: #f4f0ec;
+  --sidebar-primary: #839be3;
+  --sidebar-primary-foreground: #1a1a1a;
+  --sidebar-accent: #748baa;
+  --sidebar-accent-foreground: #f4f0ec;
+  --sidebar-border: #a6b1c2;
+  --sidebar-ring: #434e9e;
 }
 
+/* --- Theme variables for Tailwind inline access --- */
 @theme inline {
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
 
-  /* Color palette extracted from Shawn's Detailing logo */
-  --color-brand-navy: #1e3a8a;
-  --color-brand-royal: #2563eb;
-  --color-brand-sky: #60a5fa;
-  --color-brand-chrome: #cbd5e1;
-  --color-brand-bronze: #92400e;
-  --color-brand-tan: #d97706;
+  /* Logo-derived brand tokens */
+  --color-brand-tan: #d7ae92;
+  --color-brand-navy: #434e9e;
+  --color-brand-sky: #839be3;
+  --color-brand-steel: #748baa;
 
-  /* Semantic tokens */
+  /* Semantic tokens (mapped from root vars) */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -76,10 +89,13 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Sidebar variables */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -90,14 +106,22 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* --- Base layer with new background gradient --- */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
 
   body {
-    @apply bg-background text-foreground;
+    /* subtle warm-to-cool gradient for depth */
+    background: linear-gradient(
+      180deg,
+      var(--color-brand-tan) 0%,
+      var(--color-brand-sky) 100%
+    );
+    color: var(--foreground);
     font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
 
   h1,
@@ -106,11 +130,11 @@
   h4,
   h5,
   h6 {
-    @apply font-serif;
+    @apply font-serif text-brand-navy;
   }
 }
 
-/* Custom animations */
+/* --- Custom shimmer animation retained --- */
 @keyframes shimmer {
   0% {
     background-position: -1000px 0;
@@ -122,6 +146,11 @@
 
 .animate-shimmer {
   animation: shimmer 3s infinite linear;
-  background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
   background-size: 1000px 100%;
 }
