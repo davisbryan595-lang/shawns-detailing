@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
@@ -28,7 +27,6 @@ export function Booking() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000))
     setIsSubmitted(true)
   }
@@ -97,22 +95,24 @@ export function Booking() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <Card>
+            <Card className="bg-[#434E9E]/90 text-white">
               <CardHeader>
-                <CardTitle className="font-serif">Contact Information</CardTitle>
-                <CardDescription>Get in touch with us directly</CardDescription>
+                <CardTitle className="font-serif text-white">Contact Information</CardTitle>
+                <CardDescription className="text-gray-200">
+                  Get in touch with us directly
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <a
                   href="tel:6317904554"
-                  className="flex items-center gap-3 p-4 rounded-lg hover:bg-muted transition-colors"
+                  className="flex items-center gap-3 p-4 rounded-lg hover:bg-white/10 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Phone className="h-5 w-5 text-primary" />
+                  <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                    <Phone className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <p className="font-medium">Phone</p>
-                    <p className="text-sm text-muted-foreground">631-790-4554</p>
+                    <p className="text-sm text-gray-200">631-790-4554</p>
                   </div>
                 </a>
 
@@ -120,41 +120,41 @@ export function Booking() {
                   href="https://wa.me/16317904554"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-4 rounded-lg hover:bg-muted transition-colors"
+                  className="flex items-center gap-3 p-4 rounded-lg hover:bg-white/10 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <MessageCircle className="h-5 w-5 text-primary" />
+                  <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                    <MessageCircle className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <p className="font-medium">WhatsApp</p>
-                    <p className="text-sm text-muted-foreground">Message us</p>
+                    <p className="text-sm text-gray-200">Message us</p>
                   </div>
                 </a>
 
                 <div className="flex items-center gap-3 p-4 rounded-lg">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Mail className="h-5 w-5 text-primary" />
+                  <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                    <Mail className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-sm text-muted-foreground">info@shawnsdetailing.com</p>
+                    <p className="text-sm text-gray-200">info@shawnsdetailing.com</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="bg-[#748BAA]/90 text-white">
               <CardHeader>
-                <CardTitle className="font-serif">Business Hours</CardTitle>
+                <CardTitle className="font-serif text-white">Business Hours</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Monday - Saturday</span>
+                    <span className="text-gray-200">Monday - Saturday</span>
                     <span className="font-medium">8:00 AM - 6:00 PM</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Sunday</span>
+                    <span className="text-gray-200">Sunday</span>
                     <span className="font-medium">By Appointment</span>
                   </div>
                 </div>
@@ -186,6 +186,7 @@ export function Booking() {
                         value={formData.name}
                         onChange={(e) => handleChange("name", e.target.value)}
                         placeholder="John Doe"
+                        className="[&::placeholder]:text-black"
                       />
                     </div>
 
@@ -198,6 +199,7 @@ export function Booking() {
                         value={formData.phone}
                         onChange={(e) => handleChange("phone", e.target.value)}
                         placeholder="(631) 790-4554"
+                        className="[&::placeholder]:text-black"
                       />
                     </div>
                   </div>
@@ -211,6 +213,7 @@ export function Booking() {
                       value={formData.email}
                       onChange={(e) => handleChange("email", e.target.value)}
                       placeholder="john@example.com"
+                      className="[&::placeholder]:text-black"
                     />
                   </div>
 
@@ -260,6 +263,7 @@ export function Booking() {
                       required
                       value={formData.date}
                       onChange={(e) => handleChange("date", e.target.value)}
+                      className="[&::placeholder]:text-black"
                     />
                   </div>
 
@@ -271,6 +275,7 @@ export function Booking() {
                       value={formData.address}
                       onChange={(e) => handleChange("address", e.target.value)}
                       placeholder="123 Main St, Huntington, NY 11743"
+                      className="[&::placeholder]:text-black"
                     />
                   </div>
 
@@ -282,6 +287,7 @@ export function Booking() {
                       onChange={(e) => handleChange("message", e.target.value)}
                       placeholder="Any special requests or details we should know?"
                       rows={4}
+                      className="[&::placeholder]:text-black"
                     />
                   </div>
 
