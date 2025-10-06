@@ -27,8 +27,10 @@ export function Services() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-balance">Our Services</h2>
-          <p className="text-lg text-muted-foreground text-balance">
+          <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-balance text-black">
+            Our Services
+          </h2>
+          <p className="text-lg text-gray-800 text-balance">
             From quick washes to premium ceramic coatings, we offer comprehensive detailing solutions for every need and
             budget.
           </p>
@@ -45,22 +47,22 @@ export function Services() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border-2 hover:border-primary/20">
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border-2 hover:border-primary/20 bg-white text-black">
                   <CardHeader>
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
-                    <CardTitle className="text-2xl font-serif">{service.name}</CardTitle>
-                    <CardDescription className="text-base">{service.description}</CardDescription>
+                    <CardTitle className="text-2xl font-serif text-black">{service.name}</CardTitle>
+                    <CardDescription className="text-base text-gray-700">{service.description}</CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-4 text-black">
                     <div className="space-y-2">
                       {service.pricing ? (
                         <div className="space-y-1">
                           {service.pricing.map((price, i) => (
-                            <div key={i} className="flex justify-between text-sm">
-                              <span className="text-muted-foreground">{price.type}</span>
-                              <span className="font-semibold">${price.price}</span>
+                            <div key={i} className="flex justify-between text-sm text-black">
+                              <span className="text-gray-700">{price.type}</span>
+                              <span className="font-semibold text-black">${price.price}</span>
                             </div>
                           ))}
                         </div>
@@ -69,13 +71,13 @@ export function Services() {
                           {typeof service.price === "number" ? `$${service.price}` : service.price}
                         </div>
                       )}
-                      <div className="text-sm text-muted-foreground">Duration: {service.duration}</div>
+                      <div className="text-sm text-gray-700">Duration: {service.duration}</div>
                     </div>
 
                     {service.includes && (
-                      <div className="pt-4 border-t">
-                        <p className="text-sm font-medium mb-2">Includes:</p>
-                        <ul className="text-sm text-muted-foreground space-y-1">
+                      <div className="pt-4 border-t border-gray-300">
+                        <p className="text-sm font-medium mb-2 text-black">Includes:</p>
+                        <ul className="text-sm text-gray-700 space-y-1">
                           {service.includes.slice(0, 3).map((item, i) => (
                             <li key={i} className="flex items-start">
                               <span className="mr-2">•</span>
@@ -89,8 +91,12 @@ export function Services() {
                       </div>
                     )}
 
-                    <Button asChild className="w-full rounded-full bg-transparent" variant="outline">
-                      <a href="#contact">
+                    <Button
+                      asChild
+                      className="w-full rounded-full bg-transparent border-black text-black hover:bg-black hover:text-white"
+                      variant="outline"
+                    >
+                      <a href="#contact" className="flex items-center justify-center">
                         Book This Service
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
