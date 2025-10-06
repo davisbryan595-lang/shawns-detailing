@@ -1,0 +1,157 @@
+{
+  "services": [
+    {
+      "id": "exterior-wash",
+      "name": "Exterior Wash & Tire Shine",
+      "description": "Quick exterior wash with professional tire shine for that fresh, clean look.",
+      "duration": "30-45 min",
+      "pricing": [
+        { "type": "Car", "price": 25 },
+        { "type": "SUV/Truck", "price": 35 },
+        { "type": "Semi Truck", "price": 100 }
+      ],
+      "icon": "sparkles"
+    },
+    {
+      "id": "express-detail",
+      "name": "Express Detail",
+      "description": "Complete interior and exterior refresh for busy schedules.",
+      "duration": "1.5-2 hours",
+      "price": 80,
+      "includes": [
+        "Wash",
+        "Clean tires and rims",
+        "Dry vehicle",
+        "Tire shine",
+        "Spray wax",
+        "Interior clean windows in/out",
+        "Clean cupholders, dashboard, vents, door panels",
+        "Vacuum, condition leather",
+        "Clean door jams"
+      ],
+      "icon": "zap"
+    },
+    {
+      "id": "express-plus",
+      "name": "Express + Wax/Clay/Iron Decon",
+      "description": "Express detail with advanced paint correction and protection.",
+      "duration": "3-4 hours",
+      "price": 150,
+      "includes": [
+        "All Express Detail services",
+        "Wax/sealant application",
+        "Clay bar treatment",
+        "Iron decontamination"
+      ],
+      "icon": "shield"
+    },
+    {
+      "id": "wash-wax",
+      "name": "Wash & Wax",
+      "description": "Premium exterior care with long-lasting wax protection.",
+      "duration": "1-1.5 hours",
+      "price": 100,
+      "icon": "droplet"
+    },
+    {
+      "id": "full-detail",
+      "name": "Full Detail",
+      "description": "Comprehensive interior and exterior detailing for showroom results.",
+      "duration": "4-6 hours",
+      "pricing": [
+        { "type": "Car", "price": 225 },
+        { "type": "SUV/Pickup Truck", "price": 250 },
+        { "type": "Mini Van/Commercial Vans/Large SUVs", "price": 300 }
+      ],
+      "icon": "star"
+    },
+    {
+      "id": "ceramic-coating",
+      "name": "Ceramic Coating",
+      "description": "Ultimate paint protection with multi-year durability and hydrophobic properties.",
+      "duration": "1-2 days",
+      "price": "Starts at $1000",
+      "icon": "gem"
+    },
+    {
+      "id": "boat-detailing",
+      "name": "Boat Detailing",
+      "description": "Specialized marine detailing to protect your investment from the elements.",
+      "duration": "Varies",
+      "price": "$20/ft",
+      "icon": "anchor"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Michael R.",
+      "rating": 5,
+      "text": "Shawn did an incredible job on my BMW. It looks better than the day I bought it! The ceramic coating is worth every penny.",
+      "location": "Huntington, NY"
+    },
+    {
+      "name": "Jennifer L.",
+      "rating": 5,
+      "text": "Best mobile detailing service in Suffolk County. Professional, punctual, and the results are always amazing.",
+      "location": "Port Jefferson, NY"
+    },
+    {
+      "name": "David K.",
+      "rating": 5,
+      "text": "My boat has never looked this good. Shawn's attention to detail is unmatched. Highly recommend!",
+      "location": "Babylon, NY"
+    },
+    {
+      "name": "Sarah M.",
+      "rating": 5,
+      "text": "The express detail was perfect for my busy schedule. Quick, thorough, and my car looks brand new.",
+      "location": "Smithtown, NY"
+    },
+    {
+      "name": "Robert T.",
+      "rating": 5,
+      "text": "Outstanding service on my truck. The interior detailing removed stains I thought were permanent!",
+      "location": "Islip, NY"
+    },
+    {
+      "name": "Lisa W.",
+      "rating": 5,
+      "text": "Shawn is a true professional. The full detail exceeded my expectations. Will definitely be a repeat customer.",
+      "location": "East Hampton, NY"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Do I need to prepare my vehicle before the appointment?",
+      "answer": "No preparation needed! Just remove any valuable personal items. We handle everything else, including moving your vehicle if needed for optimal workspace."
+    },
+    {
+      "question": "What's your cancellation policy?",
+      "answer": "We understand plans change. Please provide at least 24 hours notice for cancellations or rescheduling. Same-day cancellations may incur a fee."
+    },
+    {
+      "question": "What payment methods do you accept?",
+      "answer": "We accept cash, all major credit cards, Venmo, Zelle, and Apple Pay for your convenience."
+    },
+    {
+      "question": "How long does ceramic coating last?",
+      "answer": "Our ceramic coatings provide 2-5 years of protection depending on the package selected and maintenance. We offer warranty coverage and maintenance plans."
+    },
+    {
+      "question": "Do you charge travel fees?",
+      "answer": "Service within our core Suffolk and Nassau County areas is included. Extended travel outside these areas may incur a small travel fee, which we'll discuss during booking."
+    },
+    {
+      "question": "What if it rains on my appointment day?",
+      "answer": "We monitor weather closely and will contact you to reschedule if conditions aren't suitable. For services requiring covered areas, we can work in your garage."
+    },
+    {
+      "question": "Can you detail my vehicle at my workplace?",
+      "answer": "We bring our mobile service to your home, office, or any location in Suffolk and Nassau County."
+    },
+    {
+      "question": "How often should I get my vehicle detailed?",
+      "answer": "We recommend a full detail every 3-6 months, with express details or washes monthly to maintain that showroom shine and protect your investment."
+    }
+  ]
+}
